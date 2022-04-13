@@ -1,14 +1,31 @@
 package com.diego.projet.loja.maven.model.bo;
 
 import java.time.LocalDate;
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "cliente")
 public class Cliente extends Pessoa{
+    
+    @Id
     private int idCliente;
+    
+    @Column
     private LocalDate dtNasc;
+    
+    @Column
     private String cpfCliente;
+    
+    @Column
     private String rgCliente;
+    
+    @Column
     private String foneCliente;
+    
+    @Column
     private String fone2Cliente;
 
     public Cliente() {

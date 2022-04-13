@@ -2,16 +2,37 @@ package com.diego.projet.loja.maven.model.bo;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "compra")
 public class Compra {
 
+    @Id
     private Long idCompra;
+    
+    @Column
     private Fornecedor fornecedor;
+    
+    @Column
     private CondicaoPagamento condicaoPagamento;
+    
+    @Column
     private Long numeroNota;
+    
+    @Column
     private String serieNota;
+    
+    @Column
     private LocalDate dataCompra;
+    
+    @Column
     private BigDecimal desconto;
+    
+    @Column
     private BigDecimal total;
 
     public Compra() {

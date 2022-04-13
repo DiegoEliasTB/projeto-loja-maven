@@ -1,12 +1,30 @@
 package com.diego.projet.loja.maven.model.bo;
 
-public class CaracteristicaProduto {
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "caracteristicaProduto")
+public class CaracteristicaProduto {
+    @Id
     private Long idCaracteristicaProduto;
+    
+    @Column
     private Produto produto;
+    
+    @Column
     private Cor cor;
+    
+    @Column
     private String tamanho;
+    
+    @Column
     private String barra;
+    
+    @Column
     private Long quantidadeEstoque;
 
     public CaracteristicaProduto () {

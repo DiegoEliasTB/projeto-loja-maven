@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Bairro {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idBairro;
     
     @Column

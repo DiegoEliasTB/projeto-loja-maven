@@ -2,12 +2,25 @@ package com.diego.projet.loja.maven.model.bo;
 
 import java.time.LocalDate;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "condicaopagamento")
 public class CondicaoPagamento {
 
+    @Id
     private Long idCondicaoPagamento;
+    
+    @Column
     private String descricao;
+    
+    @Column
     private LocalDate diasAtePrimeiraParcela;
+    
+    @Column
     private LocalDate diasEntreParcelas;
 
     public CondicaoPagamento () {

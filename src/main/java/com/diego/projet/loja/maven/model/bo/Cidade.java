@@ -1,7 +1,21 @@
 package com.diego.projet.loja.maven.model.bo;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "cidade")
 public class Cidade {
+    
+    @Id
     private int  idCidade;
+    
+    @Column
     private String descricaoCidade;
+    
+    @Column
     private String ufCidade;
 
     public Cidade() {

@@ -1,8 +1,18 @@
 package com.diego.projet.loja.maven.model.bo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "condicaopagamento")
 public class Cor {
 
+    @Id
     private Long idCor;
+    
+    @Column
     private String descricao;
 
     public Cor() {

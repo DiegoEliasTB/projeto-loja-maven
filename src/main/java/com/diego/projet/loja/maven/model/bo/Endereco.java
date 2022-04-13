@@ -1,10 +1,28 @@
 package com.diego.projet.loja.maven.model.bo;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "endereco")
 public class Endereco {
-  private int idCep;
-  private String cepCep;
-  private String logradouroCep;
-  private Bairro bairro;
-  private Cidade cidade;
+    
+    @Id
+    private int idCep;
+    
+    @Column
+    private String cepCep;
+    
+    @Column
+    private String logradouroCep;
+    
+    @Column
+    private Bairro bairro;
+    
+    @Column
+    private Cidade cidade;
 
     public Endereco() {
     }
