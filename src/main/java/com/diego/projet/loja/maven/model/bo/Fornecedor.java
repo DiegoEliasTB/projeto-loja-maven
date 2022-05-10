@@ -1,10 +1,24 @@
 package com.diego.projet.loja.maven.model.bo;
 
-public class Fornecedor extends Pessoa {
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+public class Fornecedor extends Pessoa implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFornecedor;
+    
+    @Column
     private String razaoSocialFornecedor;
+    
+    @Column
     private String cnpjFornecedor;
+    
+    @Column
     private String inscEstadualFornecedor;
 
     public Fornecedor() {

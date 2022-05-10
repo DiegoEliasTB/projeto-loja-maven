@@ -1,14 +1,33 @@
 package com.diego.projet.loja.maven.model.bo;
 
 import java.math.BigDecimal;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 public class Produto {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProduto;
+    
+    @Column
     private String descricao;
+    
+    @Column
     private BigDecimal valor;
+    
+    @Column
+    @OneToMany
     private Marca marca;
+    
+    @Column
     private TipoProduto tipoProduto;
+    
+    @Column
+    @OneToMany
     private Tamanho tamanho;
 
     public Produto () {

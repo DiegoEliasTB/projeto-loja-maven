@@ -175,7 +175,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here: lllllllllll
         ClienteService clienteService = new ClienteService();
-        var total = clienteService.buscaTotal();
+        int total = clienteService.buscaTotal();
         setTotalCliente(String.valueOf(total));
     }//GEN-LAST:event_formWindowActivated
 

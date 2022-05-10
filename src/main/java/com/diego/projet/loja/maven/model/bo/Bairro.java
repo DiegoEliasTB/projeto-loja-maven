@@ -1,4 +1,5 @@
 package com.diego.projet.loja.maven.model.bo;
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,10 +9,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "bairro")
-public class Bairro {
+public class Bairro implements Serializable{
     
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idBairro;
     
     @Column

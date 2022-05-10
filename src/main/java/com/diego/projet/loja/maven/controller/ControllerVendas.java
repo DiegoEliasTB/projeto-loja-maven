@@ -1,5 +1,8 @@
 package com.diego.projet.loja.maven.controller;
 
+import com.diego.projet.loja.maven.model.bo.Cliente;
+import com.diego.projet.loja.maven.model.bo.CondicaoPagamento;
+import com.diego.projet.loja.maven.model.bo.Produto;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -8,6 +11,7 @@ import java.time.LocalDate;
 import java.util.Random;
 import javax.swing.table.DefaultTableModel;
 import com.diego.projet.loja.maven.model.bo.Venda;
+import com.diego.projet.loja.maven.model.bo.Vendedor;
 import com.diego.projet.loja.maven.service.CaracteristicaProdutoService;
 import com.diego.projet.loja.maven.service.ClienteService;
 import com.diego.projet.loja.maven.service.CondicaoPagamentoService;
@@ -53,11 +57,11 @@ public class ControllerVendas implements ActionListener {
                     
                     itens++;
                                    
-                    var campo = telaVendas.getjTextFieldBarraProduto().getText();
+                    String campo = telaVendas.getjTextFieldBarraProduto().getText();
                     
-                    var codigoBarras = campo.substring(2,15);
+                    String codigoBarras = campo.substring(2,15);
                     
-                    var produto = service.buscarPorCodigoBarras(codigoBarras);
+                    Produto produto = service.buscarPorCodigoBarras(codigoBarras);
                     
                     idProduto = produto.getIdProduto();
                     
@@ -91,7 +95,7 @@ public class ControllerVendas implements ActionListener {
                     
                     Venda venda = new Venda();
                     
-                    var serieAleatoria = random.nextInt(10000) + 1;
+                    int serieAleatoria = random.nextInt(10000) + 1;
                     venda.setSerie(String.valueOf(serieAleatoria));
                     venda.setDataVenda(LocalDate.now());
                     venda.setTotal(totalVenda);
@@ -99,13 +103,13 @@ public class ControllerVendas implements ActionListener {
                     
                     System.out.println("cliente: " + Integer.valueOf(telaVendas.getjFTFidAluno().getText()) );
                     
-                    var cliente = clienteService.buscar(Integer.valueOf(telaVendas.getjFTFidAluno().getText()));
+                    Cliente cliente = clienteService.buscar(Integer.valueOf(telaVendas.getjFTFidAluno().getText()));
                     venda.setCliente(cliente);
                     
-                    var condicaoPagamento = condicaoPagamentoService.buscarPorId(1L);
+                    CondicaoPagamento condicaoPagamento = condicaoPagamentoService.buscarPorId(1L);
                     venda.setCondicaoPagamento(condicaoPagamento);
                     
-                    var vendedor = vendedorService.buscarPorId(1L);
+                    Vendedor vendedor = vendedorService.buscarPorId(1L);
                     venda.setVendedor(vendedor);
                     
                     venda.setDiaVencimentoParcela(vendedor.getIdVendedor());

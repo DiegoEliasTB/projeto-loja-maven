@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.diego.projet.loja.maven.model.DAO;
 
 import java.sql.Connection;
@@ -48,13 +44,13 @@ public class ProdutoDAO {
                 produto.setDescricao(rst.getString("descricaoProduto"));
                 produto.setValor(rst.getBigDecimal("valProduto"));
                 
-                final var marcaId = rst.getLong("marca_idmarca");
+                final Long marcaId = rst.getLong("marca_idmarca");
                 produto.setMarca(marcaService.buscarPorId(marcaId));
                 
-                final var tipoProdutoId = rst.getLong("tipoProduto_idtipoProduto");
+                final Long tipoProdutoId = rst.getLong("tipoProduto_idtipoProduto");
                 produto.setTipoProduto(tipoProdutoService.buscarPorId(tipoProdutoId));
                 
-                final var tamanhoId = rst.getLong("tamanho_idtamanho");
+                final Long tamanhoId = rst.getLong("tamanho_idtamanho");
                 produto.setTamanho(tamanhoService.buscarPorId(tamanhoId));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);
@@ -97,13 +93,13 @@ public class ProdutoDAO {
                 produto.setDescricao(rst.getString("descricaoProduto"));
                 produto.setValor(rst.getBigDecimal("valProduto"));
                 
-                final var marcaId = rst.getLong("marca_idmarca");
+                final Long marcaId = rst.getLong("marca_idmarca");
                 produto.setMarca(marcaService.buscarPorId(marcaId));
                 
-                final var tipoProdutoId = rst.getLong("tipoProduto_idtipoProduto");
+                final Long tipoProdutoId = rst.getLong("tipoProduto_idtipoProduto");
                 produto.setTipoProduto(tipoProdutoService.buscarPorId(tipoProdutoId));
                 
-                final var tamanhoId = rst.getLong("tamanho_idtamanho");
+                final Long tamanhoId = rst.getLong("tamanho_idtamanho");
                 produto.setTamanho(tamanhoService.buscarPorId(tamanhoId));
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);

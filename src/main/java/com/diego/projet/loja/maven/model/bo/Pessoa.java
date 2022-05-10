@@ -1,8 +1,23 @@
 package com.diego.projet.loja.maven.model.bo;
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
+
+@MappedSuperclass
 public abstract class Pessoa {
+    
+    @Column
     private String nome;
+    
+    @Column
     private String email;
+    
+    @Column
     private String compleEndereco;
+    
+    @Column
+    @OneToOne
     private Endereco endereco;
 
     public Pessoa() {

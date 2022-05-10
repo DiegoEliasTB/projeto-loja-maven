@@ -7,17 +7,28 @@ import com.diego.projet.loja.maven.model.bo.Cidade;
 
 public class CidadeService implements InterfaceService<Cidade> {
 
+    
     @Override
     public  void salvar(Cidade objeto) {
-        CidadeDAO cidadeDAO = new CidadeDAO();
-        cidadeDAO.create(objeto);
+        CidadeDAO.getInstance().create(objeto);
     }
 
     @Override
     public List<Cidade> buscar() {
-        CidadeDAO cidadeDAO = new CidadeDAO();
-        return cidadeDAO.retrieve();
+        return CidadeDAO.getInstance().retrieve();
     }
+    
+//    @Override
+//    public  void salvar(Cidade objeto) {
+//        CidadeDAO cidadeDAO = new CidadeDAO();
+//        cidadeDAO.create(objeto);
+//    }
+
+//    @Override
+//    public List<Cidade> buscar() {
+//        CidadeDAO cidadeDAO = new CidadeDAO();
+//        return cidadeDAO.retrieve();
+//    }
 
     @Override
     public Cidade buscar(int codigo) {

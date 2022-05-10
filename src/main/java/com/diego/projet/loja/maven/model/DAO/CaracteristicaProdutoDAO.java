@@ -44,10 +44,10 @@ public class CaracteristicaProdutoDAO {
             while(rst.next()){
                 caracteristicaProduto.setIdCaracteristicaProduto(rst.getLong("idCaracterisitcaProduto"));
                 
-                final var produto = rst.getLong("produto_idproduto");
+                final Long produto = rst.getLong("produto_idproduto");
                 caracteristicaProduto.setProduto(produtoService.buscarPorId(produto));
                 
-                final var cor = rst.getLong("cor_idcor");
+                final Long cor = rst.getLong("cor_idcor");
                 caracteristicaProduto.setCor(corService.buscarPorId(cor));
                 
                 caracteristicaProduto.setTamanho(rst.getString("tamanhoProduto"));

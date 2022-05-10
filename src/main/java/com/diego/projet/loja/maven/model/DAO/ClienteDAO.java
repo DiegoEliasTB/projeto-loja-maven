@@ -4,14 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Month;
-import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import com.diego.projet.loja.maven.model.bo.Cidade;
 import com.diego.projet.loja.maven.model.bo.Cliente;
+import com.diego.projet.loja.maven.model.bo.Endereco;
 import com.diego.projet.loja.maven.service.EnderecoService;
 
 public class ClienteDAO implements InterfaceDAO<Cliente> {
@@ -112,10 +107,10 @@ public class ClienteDAO implements InterfaceDAO<Cliente> {
                 System.out.println("Data foda: " + rst.getString("dtNasCliente"));
                
                 
-                var dataAno = Integer.valueOf(rst.getString("dtNasCliente").substring(0, 4));
-                var dataMes = Integer.valueOf(rst.getString("dtNasCliente").substring(5, 7));
-                var dataDia = Integer.valueOf(rst.getString("dtNasCliente").substring(8, 10));
-                 System.out.println("Data dia: " + dataAno);
+                int dataAno = Integer.valueOf(rst.getString("dtNasCliente").substring(0, 4));
+                int dataMes = Integer.valueOf(rst.getString("dtNasCliente").substring(5, 7));
+                int dataDia = Integer.valueOf(rst.getString("dtNasCliente").substring(8, 10));
+                System.out.println("Data dia: " + dataAno);
                 System.out.println("Data mes: " + dataMes);
                 System.out.println("Data ano: " + dataDia);
                 
@@ -130,7 +125,7 @@ public class ClienteDAO implements InterfaceDAO<Cliente> {
                 cliente.setFone2Cliente(rst.getString("compleEnderecoCliente"));
                 
                 EnderecoService enderecoService = new EnderecoService();
-                var cep = enderecoService.buscar(rst.getString("endereco_idcep")); 
+                Endereco cep = enderecoService.buscar(rst.getString("endereco_idcep")); 
                 cliente.setEndereco(cep);
             }
             ConnectionFactory.closeConnection(conexao, pstm, rst);

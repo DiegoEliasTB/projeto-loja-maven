@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.diego.projet.loja.maven.model.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import com.diego.projet.loja.maven.model.bo.Cor;
+import com.diego.projet.loja.maven.model.bo.Endereco;
 import com.diego.projet.loja.maven.model.bo.Vendedor;
 import com.diego.projet.loja.maven.service.EnderecoService;
 
@@ -53,7 +49,7 @@ public class VendedorDAO {
                 EnderecoService enderecoService = new EnderecoService();
                 System.out.println("cep: " + vendedor.getEndereco());
                 System.out.println("será?: " + rst.getInt("endereco_idcep"));
-                var cep = enderecoService.buscar(rst.getInt("endereco_idcep"));
+                Endereco cep = enderecoService.buscar(rst.getInt("endereco_idcep"));
                 System.out.println("cep: " + cep);
                 vendedor.setEndereco(cep);
             }

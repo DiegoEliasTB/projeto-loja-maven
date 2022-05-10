@@ -3,19 +3,25 @@ package com.diego.projet.loja.maven.model.bo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "caracteristicaProduto")
-public class CaracteristicaProduto {
+public class CaracteristicaProduto implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCaracteristicaProduto;
     
     @Column
+    @OneToOne
     private Produto produto;
     
     @Column
+    @OneToOne
     private Cor cor;
     
     @Column

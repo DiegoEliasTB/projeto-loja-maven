@@ -1,13 +1,32 @@
 package com.diego.projet.loja.maven.model.bo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
-public class ItensVenda {
+public class ItensVenda implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idItensVenda;
+    
+    @Column
+    @ManyToOne
     private Venda venda;
+    
+    @Column
+    @OneToOne
     private CaracteristicaProduto caracteristicaProduto;
+    
+    @Column
     private BigDecimal valorUnitario;
+    
+    @Column
     private BigDecimal quantidadeProduto;
 
     public ItensVenda() {

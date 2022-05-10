@@ -1,23 +1,32 @@
 package com.diego.projet.loja.maven.model.bo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "compra")
-public class Compra {
+public class Compra implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCompra;
     
     @Column
+    @OneToMany
     private Fornecedor fornecedor;
     
     @Column
+    @OneToMany
     private CondicaoPagamento condicaoPagamento;
     
     @Column
@@ -27,6 +36,7 @@ public class Compra {
     private String serieNota;
     
     @Column
+    @Temporal(TemporalType.DATE)
     private LocalDate dataCompra;
     
     @Column
