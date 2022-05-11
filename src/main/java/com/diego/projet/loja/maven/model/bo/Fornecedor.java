@@ -1,11 +1,17 @@
 package com.diego.projet.loja.maven.model.bo;
 
 import java.io.Serializable;
+import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
+@AttributeOverride(name = "nome", column = @Column(name="nomeFantasiaForncedor"))
+@AttributeOverride(name = "email", column = @Column(name="emailFornecedor"))
+@AttributeOverride(name = "compleEndereco", column = @Column(name="compleEnderecoFornecedor"))
 public class Fornecedor extends Pessoa implements Serializable {
 
     @Id
