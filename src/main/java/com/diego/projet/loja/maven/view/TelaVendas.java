@@ -212,7 +212,7 @@ public class TelaVendas extends javax.swing.JDialog {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabelTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -221,7 +221,6 @@ public class TelaVendas extends javax.swing.JDialog {
 
         jTextFieldBarraProduto.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
 
-        jButtonBuscaProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
         jButtonBuscaProduto.setText("Pesquisa Produto");
         jButtonBuscaProduto.setEnabled(false);
         jButtonBuscaProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -259,8 +258,6 @@ public class TelaVendas extends javax.swing.JDialog {
         );
 
         jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Magalu.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
